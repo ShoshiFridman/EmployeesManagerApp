@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
         <WrapPanel Grid.Row="1" Grid.Column="1">
             <TextBlock Margin="13">Choose candidate:</TextBlock>
-            <ComboBox Name="ComboboxChooseCandidate" Margin="13" Width="200"></ComboBox>
+            <ComboBox Name="ComboboxChooseCandidate" Margin="13" Width="200" SelectionChanged="ComboboxChooseCandidate_SelectionChanged_1"></ComboBox>
         </WrapPanel>
         <DataGrid Name="DataGridInterviews" Grid.Row="2" Grid.Column="1"/>
     </Grid>

@@ -20,25 +20,32 @@ namespace UI
     /// </summary>
     public partial class FindCandidate : Window
     {
-        Interviews interviewsMBL;
+        Interviews interviews;
         public FindCandidate()
         {
-            interviewsMBL = new Interviews();
+            interviews = new Interviews();
 
             InitializeComponent();
 
-            var candidate = interviewsMBL.GetNameCandidencies();
+            var candidate = interviews.GetNameCandidencies();
             ComboboxChooseCandidate.ItemsSource = candidate;
         }
 
         private void ComboboxChooseCandidate_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var interview = interviewsMBL.GetInterviewsDetails(ComboboxChooseCandidate.SelectedItem.ToString());
+            var interview = interviews.GetInterviewsDetails(ComboboxChooseCandidate.SelectedItem.ToString());
             DataGridInterviews.ItemsSource = interview;
         }
 
         private void DataGridInterviews_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void ComboboxChooseCandidate_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            var interview = interviews.GetInterviewsDetails(ComboboxChooseCandidate.SelectedItem.ToString());
+            DataGridInterviews.ItemsSource = interview;
 
         }
     }
